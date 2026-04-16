@@ -1,0 +1,467 @@
+{
+  "metadata": {
+    "tool_version": "0.1.0",
+    "target_host": "example.com",
+    "scanned_at_utc": "2026-04-16T21:40:47Z",
+    "elapsed": "2.664621333s",
+    "out_dir": "assets/samples/example.com"
+  },
+  "dns": {
+    "zone": "example.com",
+    "nameservers": [
+      "hera.ns.cloudflare.com",
+      "elliott.ns.cloudflare.com"
+    ],
+    "raw_records": {
+      "A": [
+        "172.66.147.243",
+        "104.20.23.154"
+      ],
+      "AAAA": [
+        "2606:4700:8395:72db:f20c:0:ef6b:ff98"
+      ],
+      "CAA": null,
+      "CNAME": null,
+      "DKIM_default": [
+        "v=DKIM1; p="
+      ],
+      "DMARC": [
+        "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s"
+      ],
+      "MX": [
+        "0"
+      ],
+      "NS": [
+        "hera.ns.cloudflare.com",
+        "elliott.ns.cloudflare.com"
+      ],
+      "SOA": [
+        "elliott.ns.cloudflare.com dns.cloudflare.com"
+      ],
+      "TXT": [
+        "_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9",
+        "v=spf1 -all"
+      ]
+    },
+    "technical_detail": {
+      "doh_dnskey": {
+        "ad": true,
+        "answers": [
+          "256 3 13 MjyZielP0GqniI1+j+wAG/3t0ImDDIlj1CxR0oobkZQHSKH2Fqx6tm2NcYu57POJ83SzCWLkqIjZHS1mh5wbaw==",
+          "257 3 13 mdsswUyr3DPW132mOi8V9xESWE8jTo0dxCjjnopKl+GqJxpVXckHAeF+KkxLbxILfDLUT0rAK9iUzy1L53eKGQ==",
+          "256 3 13 oJMRESz5E4gYzS/q6XDrvU1qMPYIjCWzJaOau8XNEZeqCYKD5ar0IRd8KqXXFJkqmVfRvMGPmM1x8fGAa2XhSA==",
+          "256 3 13 kxipjoIbNZDsWqEKaYaGq6fM/XThrRp1ue6AV9R/n3eWxpGCeCWJb47PEEEj/Q6VAYFW/7UFo5mXoZfxKYZa3A=="
+        ],
+        "status": 0
+      },
+      "doh_ds": {
+        "ad": true,
+        "answers": [
+          "2371 13 2 C988EC423E3880EB8DD8A46FE06CA230EE23F35B578D64E78B29C3E1C83D245A"
+        ],
+        "status": 0
+      },
+      "sample_ttl_seconds": 300
+    },
+    "findings": [
+      {
+        "id": "dns-missing-caa",
+        "category": "dns_vulnerabilities",
+        "severity": "medium",
+        "title": "No CAA records",
+        "detail": "Any public CA could issue certificates for this domain unless constrained elsewhere.",
+        "recommendation": "Publish CAA limiting issuance to CAs you use; set issuewild if applicable."
+      }
+    ]
+  },
+  "ssl": {
+    "host": "example.com",
+    "port": 443,
+    "connected": true,
+    "negotiated_version": "TLS1.3",
+    "negotiated_cipher": "TLS_AES_128_GCM_SHA256",
+    "certificate": {
+      "subject_cn": "example.com",
+      "dns_names": [
+        "example.com",
+        "*.example.com"
+      ],
+      "issuer_cn": "Cloudflare TLS Issuing ECC CA 1",
+      "not_before_utc": "2026-04-02T21:18:57Z",
+      "not_after_utc": "2026-07-01T21:24:46Z",
+      "days_until_expiry": 75,
+      "signature_algorithm": "ECDSA-SHA256",
+      "verified_chain": true,
+      "hostname_match": true
+    },
+    "supported_protocols": [
+      "TLS1.0",
+      "TLS1.1",
+      "TLS1.2",
+      "TLS1.3"
+    ],
+    "weak_protocols_enabled": [
+      "TLS1.0",
+      "TLS1.1"
+    ],
+    "supported_ciphers": [
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+        "id": 49161,
+        "score": 85
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+        "id": 49162,
+        "score": 85
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+        "id": 49171,
+        "score": 40
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+        "id": 49172,
+        "score": 40
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+        "id": 49195,
+        "score": 100
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "id": 49196,
+        "score": 100
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "id": 49199,
+        "score": 100
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "id": 49200,
+        "score": 100
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+        "id": 52392,
+        "score": 100
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+        "id": 52393,
+        "score": 100
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_RSA_WITH_AES_128_CBC_SHA",
+        "id": 47,
+        "score": 40
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_RSA_WITH_AES_256_CBC_SHA",
+        "id": 53,
+        "score": 40
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_RSA_WITH_AES_128_CBC_SHA256",
+        "id": 60,
+        "score": 40
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_RSA_WITH_AES_128_GCM_SHA256",
+        "id": 156,
+        "score": 50
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_RSA_WITH_AES_256_GCM_SHA384",
+        "id": 157,
+        "score": 50
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+        "id": 49187,
+        "score": 50
+      },
+      {
+        "protocol": "TLS1.2",
+        "name": "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+        "id": 49191,
+        "score": 40
+      }
+    ],
+    "grading": {
+      "overall_grade": "C",
+      "protocol_score": 60,
+      "certificate_score": 100,
+      "cipher_score": 40,
+      "overall_score": 72,
+      "notes": "weak protocol TLS1.0; weak protocol TLS1.1"
+    },
+    "findings": [
+      {
+        "id": "ssl-weak-protocol-tls10",
+        "category": "ssl_protocol",
+        "severity": "high",
+        "title": "Legacy TLS enabled: TLS1.0",
+        "detail": "Server negotiates deprecated protocol versions.",
+        "recommendation": "Disable TLS 1.0/1.1; prefer TLS 1.2+ and TLS 1.3."
+      },
+      {
+        "id": "ssl-weak-protocol-tls11",
+        "category": "ssl_protocol",
+        "severity": "high",
+        "title": "Legacy TLS enabled: TLS1.1",
+        "detail": "Server negotiates deprecated protocol versions.",
+        "recommendation": "Disable TLS 1.0/1.1; prefer TLS 1.2+ and TLS 1.3."
+      }
+    ]
+  },
+  "http": {
+    "base_url": "https://example.com",
+    "status_code": 200,
+    "final_url": "https://example.com",
+    "headers": {
+      "Age": "47",
+      "Allow": "GET, HEAD",
+      "Cf-Cache-Status": "HIT",
+      "Cf-Ray": "9ed659c72db0a748-DEL",
+      "Content-Type": "text/html",
+      "Date": "Thu, 16 Apr 2026 21:40:50 GMT",
+      "Last-Modified": "Tue, 14 Apr 2026 05:44:44 GMT",
+      "Server": "cloudflare"
+    },
+    "tests": [
+      {
+        "name": "Strict-Transport-Security",
+        "passed": false,
+        "skipped": false,
+        "detail": "header missing"
+      },
+      {
+        "name": "X-Frame-Options",
+        "passed": false,
+        "skipped": false,
+        "detail": "header missing"
+      },
+      {
+        "name": "X-Content-Type-Options",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected nosniff"
+      },
+      {
+        "name": "Content-Security-Policy",
+        "passed": false,
+        "skipped": false,
+        "detail": "header missing"
+      },
+      {
+        "name": "X-Permitted-Cross-Domain-Policies",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected none"
+      },
+      {
+        "name": "Referrer-Policy",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected no-referrer"
+      },
+      {
+        "name": "Cross-Origin-Embedder-Policy",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected require-corp"
+      },
+      {
+        "name": "Cross-Origin-Opener-Policy",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected same-origin"
+      },
+      {
+        "name": "Cross-Origin-Resource-Policy",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected same-origin"
+      },
+      {
+        "name": "Permissions-Policy",
+        "passed": false,
+        "skipped": false,
+        "detail": "header missing"
+      },
+      {
+        "name": "Cache-Control",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected no-store, max-age=0"
+      },
+      {
+        "name": "X-DNS-Prefetch-Control",
+        "passed": false,
+        "skipped": false,
+        "detail": "expected off"
+      },
+      {
+        "name": "Feature-Policy (should not exist)",
+        "passed": true,
+        "skipped": false
+      },
+      {
+        "name": "Public-Key-Pins (should not exist)",
+        "passed": true,
+        "skipped": false
+      },
+      {
+        "name": "Expect-CT (should not exist)",
+        "passed": true,
+        "skipped": false
+      },
+      {
+        "name": "X-XSS-Protection (should not exist)",
+        "passed": true,
+        "skipped": false
+      },
+      {
+        "name": "Clear-Site-Data",
+        "passed": false,
+        "skipped": true,
+        "detail": "provide --logout-path to test logout response"
+      }
+    ],
+    "findings": [
+      {
+        "id": "http-test-strict-transport-security",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Strict-Transport-Security",
+        "detail": "header missing",
+        "recommendation": "Set Strict-Transport-Security with long max-age, includeSubDomains, and preload if appropriate."
+      },
+      {
+        "id": "http-test-x-frame-options",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: X-Frame-Options",
+        "detail": "header missing",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-x-content-type-options",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: X-Content-Type-Options",
+        "detail": "expected nosniff",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-content-security-policy",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Content-Security-Policy",
+        "detail": "header missing",
+        "recommendation": "Deploy a strict CSP without unsafe-inline/unsafe-eval unless strictly required."
+      },
+      {
+        "id": "http-test-x-permitted-cross-domain-policies",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: X-Permitted-Cross-Domain-Policies",
+        "detail": "expected none",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-referrer-policy",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Referrer-Policy",
+        "detail": "expected no-referrer",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-cross-origin-embedder-policy",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Cross-Origin-Embedder-Policy",
+        "detail": "expected require-corp",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-cross-origin-opener-policy",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Cross-Origin-Opener-Policy",
+        "detail": "expected same-origin",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-cross-origin-resource-policy",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Cross-Origin-Resource-Policy",
+        "detail": "expected same-origin",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-permissions-policy",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Permissions-Policy",
+        "detail": "header missing",
+        "recommendation": "Send Permissions-Policy to disable sensitive features by default."
+      },
+      {
+        "id": "http-test-cache-control",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: Cache-Control",
+        "detail": "expected no-store, max-age=0",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      },
+      {
+        "id": "http-test-x-dns-prefetch-control",
+        "category": "http_headers",
+        "severity": "medium",
+        "title": "HTTP header check failed: X-DNS-Prefetch-Control",
+        "detail": "expected off",
+        "recommendation": "Review OWASP Secure Headers guidance and align with your application needs."
+      }
+    ]
+  },
+  "summary": {
+    "findings_total": 15,
+    "by_severity": {
+      "high": 2,
+      "medium": 13
+    },
+    "dns_finding_count": 1,
+    "ssl_finding_count": 2,
+    "http_finding_count": 12,
+    "http_tests_passed": 4,
+    "http_tests_failed": 12,
+    "http_tests_skipped": 1,
+    "ssl_grade": "C",
+    "ssl_protocol_score": 60,
+    "ssl_certificate_score": 100
+  }
+}
