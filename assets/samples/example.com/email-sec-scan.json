@@ -1,0 +1,347 @@
+{
+  "metadata": {
+    "tool_version": "0.2.0",
+    "target_host": "example.com",
+    "scanned_at_utc": "2026-04-17T21:08:54Z",
+    "elapsed": "494.7835ms",
+    "out_dir": "assets/samples/example.com"
+  },
+  "zone": "example.com",
+  "spf": {
+    "raw_records": [
+      "v=spf1 -all"
+    ],
+    "primary_record": "v=spf1 -all",
+    "lookup_estimate": 0,
+    "ends_with_all": "-all",
+    "has_ptr_mechanism": false,
+    "has_redirect": false
+  },
+  "dmarc": {
+    "raw_records": [
+      "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s"
+    ],
+    "tags": {
+      "adkim": "s",
+      "aspf": "s",
+      "p": "reject",
+      "sp": "reject",
+      "v": "DMARC1"
+    },
+    "policy": "reject",
+    "subdomain_policy": "reject",
+    "adkim": "s",
+    "aspf": "s"
+  },
+  "dkim": [
+    {
+      "selector": "default",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "google",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "selector1",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "selector2",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "k1",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "k2",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "s1",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "s2",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "mail",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "smtp",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "dkim",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "mandrill",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "cm",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "pic",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "hs1",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "hs2",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "protonmail",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "pm",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "resend",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "zendesk1",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "everlytic",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "mxvault",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "fm0",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "smtpapi",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "scph0823",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    },
+    {
+      "selector": "amazonses",
+      "found": true,
+      "records": [
+        "v=DKIM1; p="
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "mx-present",
+      "area": "Inbound routing",
+      "title": "MX records published",
+      "status": "fail",
+      "detail": "No MX records at apex."
+    },
+    {
+      "id": "spf-hardfail",
+      "area": "Sender policy (SPF)",
+      "title": "SPF default is hard fail (-all)",
+      "status": "pass",
+      "detail": "Strongest SPF stance for unauthorized senders."
+    },
+    {
+      "id": "spf-lookups",
+      "area": "Sender policy (SPF)",
+      "title": "SPF DNS lookup budget",
+      "status": "pass",
+      "detail": "Estimated 0 DNS lookups (under RFC 7208 limits)."
+    },
+    {
+      "id": "dmarc-p",
+      "area": "Domain DMARC",
+      "title": "DMARC organizational policy",
+      "status": "pass",
+      "detail": "p=reject protects the domain from unauthenticated use in many receivers."
+    },
+    {
+      "id": "dmarc-rua",
+      "area": "Domain DMARC",
+      "title": "Aggregate reporting (rua)",
+      "status": "fail",
+      "detail": "No rua= configured."
+    },
+    {
+      "id": "dkim-dns",
+      "area": "DKIM",
+      "title": "DKIM DNS for probed selectors",
+      "status": "pass",
+      "detail": "26 selector(s) publish DKIM keys."
+    },
+    {
+      "id": "mta-sts",
+      "area": "Transport (MTA-STS)",
+      "title": "MTA-STS",
+      "status": "fail",
+      "detail": "Not configured."
+    },
+    {
+      "id": "tlsrpt",
+      "area": "Transport (TLS-RPT)",
+      "title": "SMTP TLS reporting",
+      "status": "warn",
+      "detail": "No _smtp._tls record."
+    },
+    {
+      "id": "bimi",
+      "area": "Brand (BIMI)",
+      "title": "BIMI indicator record",
+      "status": "warn",
+      "detail": "Optional: no default._bimi record."
+    }
+  ],
+  "findings": [
+    {
+      "id": "email-mx-missing",
+      "category": "email_transport",
+      "severity": "high",
+      "title": "No MX records",
+      "detail": "This apex has no MX; inbound SMTP may be undefined or use A/AAAA fallback only.",
+      "recommendation": "Publish MX records pointing at your inbound mail gateways."
+    },
+    {
+      "id": "email-dmarc-no-rua",
+      "category": "email_auth",
+      "severity": "medium",
+      "title": "DMARC has no rua= aggregate reporting address",
+      "detail": "Without rua, you will not receive DMARC aggregate reports.",
+      "recommendation": "Add rua=mailto:dmarc@yourdomain (and verify the mailbox)."
+    },
+    {
+      "id": "email-mta-sts-missing",
+      "category": "email_transport",
+      "severity": "medium",
+      "title": "MTA-STS not configured",
+      "detail": "No _mta-sts TXT or policy fetch attempted.",
+      "recommendation": "Deploy MTA-STS (DNS TXT + HTTPS policy) to encourage encrypted SMTP between MTAs."
+    },
+    {
+      "id": "email-tls-rpt-missing",
+      "category": "email_transport",
+      "severity": "low",
+      "title": "TLS reporting (SMTP TLS) TXT not found",
+      "detail": "No _smtp._tls.example.com record.",
+      "recommendation": "Publish TLSRPT v=TLSRPTv1 with rua= for visibility into SMTP TLS failures."
+    },
+    {
+      "id": "email-dmarc-strict-dkim",
+      "category": "email_auth",
+      "severity": "info",
+      "title": "DMARC DKIM alignment is strict (adkim=s)",
+      "detail": "Strict alignment can cause legitimate mail to fail if DKIM d= does not match From domain.",
+      "recommendation": "Confirm all sending systems sign with aligned DKIM domains."
+    }
+  ],
+  "summary": {
+    "posture_score": 57,
+    "posture_label": "Weak",
+    "controls_pass": 4,
+    "controls_warn": 2,
+    "controls_fail": 3,
+    "findings_total": 5,
+    "by_severity": {
+      "high": 1,
+      "info": 1,
+      "low": 1,
+      "medium": 2
+    },
+    "mx_count": 0,
+    "dkim_publishers_found": 26,
+    "has_spf": true,
+    "has_dmarc": true,
+    "mta_sts_enabled": false,
+    "tls_rpt_published": false
+  }
+}
